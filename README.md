@@ -7,6 +7,7 @@ This is the client component of the Pet Adoption Management System, a Java-based
 ![client 2](https://github.com/user-attachments/assets/c051d03e-e079-4078-8935-86ce0c79c62e)
 ![client 3](https://github.com/user-attachments/assets/a42d0789-19d9-4003-9192-194a80fca4a2)
 ![client 4](https://github.com/user-attachments/assets/42b885de-5d57-4d8e-9eec-c00234cabe21)
+![client 6](https://github.com/user-attachments/assets/9d273796-41b5-4441-81a5-5453752a4a14)
 
 ## Features
 
