@@ -1,0 +1,186 @@
+/* Main application styles */
+
+/* Global styles */
+.root {
+    -fx-font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+    -fx-font-size: 12px;
+    -fx-background-image: url('/images/pets_background.jpg');
+}
+
+/* Components */
+.button {
+    -fx-background-color: #e0e0e0;
+    -fx-text-fill: #000000;
+    -fx-font-weight: normal;
+    -fx-cursor: hand;
+    -fx-padding: 5px 10px;
+    -fx-background-radius: 3px;
+    -fx-border-radius: 3px;
+}
+
+.button:hover {
+    -fx-background-color: #c8c8c8;
+}
+
+.button:pressed {
+    -fx-background-color: #a0a0a0;
+}
+
+/* Primary action button */
+.primary-button {
+    -fx-background-color: #4CAF50;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.primary-button:hover {
+    -fx-background-color: #3e8e41;
+}
+
+.primary-button:pressed {
+    -fx-background-color: #2e6730;
+}
+
+/* Secondary action button */
+.secondary-button {
+    -fx-background-color: #2196F3;
+    -fx-text-fill: white;
+}
+
+.secondary-button:hover {
+    -fx-background-color: #0b7dda;
+}
+
+.secondary-button:pressed {
+    -fx-background-color: #0a5a9c;
+}
+
+/* Danger action button */
+.danger-button {
+    -fx-background-color: #f44336;
+    -fx-text-fill: white;
+}
+
+.danger-button:hover {
+    -fx-background-color: #da190b;
+}
+
+.danger-button:pressed {
+    -fx-background-color: #a21309;
+}
+
+/* Text fields */
+.text-field, .text-area, .combo-box {
+    -fx-background-color: white;
+    -fx-border-color: #cccccc;
+    -fx-border-radius: 3px;
+    -fx-background-radius: 3px;
+    -fx-padding: 5px;
+}
+
+.text-field:focused, .text-area:focused, .combo-box:focused {
+    -fx-border-color: #2196F3;
+}
+
+/* Tables */
+.table-view {
+    -fx-background-color: white;
+    -fx-border-color: #e0e0e0;
+    -fx-border-radius: 3px;
+}
+
+.table-view .column-header {
+    -fx-background-color: #f5f5f5;
+    -fx-font-weight: bold;
+    -fx-padding: 8px;
+    -fx-border-color: #e0e0e0;
+    -fx-border-width: 0 0 1 0;
+}
+
+.table-view .table-row-cell {
+    -fx-background-color: white;
+    -fx-border-color: #f0f0f0;
+    -fx-border-width: 0 0 1 0;
+}
+
+.table-view .table-row-cell:selected {
+    -fx-background-color: #e3f2fd;
+}
+
+.table-view .table-row-cell:hover {
+    -fx-background-color: #f5f5f5;
+}
+
+/* Headers */
+.header-label {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-padding: 10px 0;
+}
+
+.sub-header-label {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-padding: 5px 0;
+}
+
+/* Status colors */
+.status-pending {
+    -fx-text-fill: #FF9800;
+}
+
+.status-approved {
+    -fx-text-fill: #2196F3;
+}
+
+.status-rejected {
+    -fx-text-fill: #F44336;
+}
+
+.status-completed {
+    -fx-text-fill: #4CAF50;
+}
+
+/* Cards */
+.card {
+    -fx-background-color: white;
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
+    -fx-border-color: #e0e0e0;
+    -fx-padding: 10px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 2);
+}
+
+/* Form layout */
+.form-section {
+    -fx-spacing: 10px;
+    -fx-padding: 10px;
+}
+
+.form-field {
+    -fx-spacing: 5px;
+}
+
+.form-label {
+    -fx-font-weight: bold;
+}
+
+/* Alerts and messages */
+.info-message {
+    -fx-text-fill: #2196F3;
+}
+
+.success-message {
+    -fx-text-fill: #4CAF50;
+}
+
+.warning-message {
+    -fx-text-fill: #FF9800;
+}
+
+.error-message {
+    -fx-text-fill: #F44336;
+}
+
+.action-button {
+}

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+
+<BorderPane xmlns="http://javafx.com/javafx/11.0.1"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controller.staff.PetManagementController">
+    <left>
+        <ScrollPane fitToWidth="true" hbarPolicy="NEVER" vbarPolicy="AS_NEEDED">
+            <VBox spacing="10" style="-fx-background-color: #f5f5f5;">
+                <padding>
+                    <Insets top="20" right="20" bottom="20" left="20"/>
+                </padding>
+                <Label text="Pet Details" style="-fx-font-size: 16; -fx-font-weight: bold;"/>
+
+                <Label text="Name"/>
+                <TextField fx:id="nameField" promptText="Pet's name"/>
+
+                <Label text="Species"/>
+                <ComboBox fx:id="speciesField" promptText="Select species" prefWidth="200">
+                    <items>
+                        <FXCollections fx:factory="observableArrayList">
+                            <String fx:value="Dog"/>
+                            <String fx:value="Cat"/>
+                            <String fx:value="Bird"/>
+                            <String fx:value="Other"/>
+                        </FXCollections>
+                    </items>
+                </ComboBox>
+
+                <Label text="Breed"/>
+                <TextField fx:id="breedField" promptText="Breed"/>
+
+                <Label text="Age (years)"/>
+                <TextField fx:id="ageField" promptText="Age"/>
+
+                <Label text="Gender"/>
+                <ComboBox fx:id="genderField" promptText="Select gender" prefWidth="200">
+                    <items>
+                        <FXCollections fx:factory="observableArrayList">
+                            <String fx:value="Male"/>
+                            <String fx:value="Female"/>
+                        </FXCollections>
+                    </items>
+                </ComboBox>
+
+                <Label text="Status"/>
+                <ComboBox fx:id="statusField" promptText="Select status" prefWidth="200">
+                    <items>
+                        <FXCollections fx:factory="observableArrayList">
+                            <String fx:value="Available"/>
+                            <String fx:value="Pending"/>
+                            <String fx:value="Adopted"/>
+                        </FXCollections>
+                    </items>
+                </ComboBox>
+
+                <Separator>
+                    <padding>
+                        <Insets top="10" bottom="10"/>
+                    </padding>
+                </Separator>
+
+                <Region VBox.vgrow="ALWAYS"/>
+
+                <HBox spacing="10">
+                    <Button text="New Pet" onAction="#handleNewPet" prefWidth="90"/>
+                    <Button text="Save" onAction="#handleSavePet" prefWidth="90" style="-fx-background-color: #4CAF50; -fx-text-fill: white;"/>
+                    <Button text="Delete" onAction="#handleDeletePet" prefWidth="90" style="-fx-background-color: #f44336; -fx-text-fill: white;"/>
+                </HBox>
+            </VBox>
+        </ScrollPane>
+    </left>
+    <center>
+        <VBox>
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <padding>
+                    <Insets top="10" right="10" bottom="10" left="10"/>
+                </padding>
+                <Label text="All Pets" style="-fx-font-size: 16; -fx-font-weight: bold;"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <TextField fx:id="searchField" promptText="Search pets..." prefWidth="200"/>
+                <Button text="Search" onAction="#handleSearch"/>
+                <Button text="Refresh" onAction="#handleRefresh"/>
+            </HBox>
+
+            <TableView fx:id="petTable" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="idColumn" text="ID" prefWidth="80"/>
+                    <TableColumn fx:id="nameColumn" text="Name" prefWidth="120"/>
+                    <TableColumn fx:id="speciesColumn" text="Species" prefWidth="100"/>
+                    <TableColumn fx:id="breedColumn" text="Breed" prefWidth="120"/>
+                    <TableColumn fx:id="ageColumn" text="Age" prefWidth="60"/>
+                    <TableColumn fx:id="genderColumn" text="Gender" prefWidth="80"/>
+                    <TableColumn fx:id="statusColumn" text="Status" prefWidth="100"/>
+                </columns>
+                <placeholder>
+                    <Label text="No pets found"/>
+                </placeholder>
+            </TableView>
+
+            <HBox alignment="CENTER_RIGHT" spacing="10">
+                <padding>
+                    <Insets top="10" right="10" bottom="10" left="10"/>
+                </padding>
+                <Label fx:id="totalPetsLabel" text="Total: 0 pets"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Button fx:id="backButton" text="GO BACK"
+                        style="-fx-background-color: #f5f5f5; -fx-border-color: #cccccc;
+                               -fx-border-radius: 3; -fx-background-radius: 3; -fx-font-size: 14px;"
+                        prefWidth="120" prefHeight="40"/>
+            </HBox>
+        </VBox>
+    </center>
+</BorderPane>

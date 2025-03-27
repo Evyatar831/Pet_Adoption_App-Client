@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+
+<BorderPane xmlns="http://javafx.com/javafx/11.0.1"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controller.adopter.AdopterDashboardController"
+            style="-fx-background-color: #d4f0e2;">
+    <center>
+        <VBox alignment="CENTER" spacing="20">
+            <padding>
+                <Insets top="30" right="50" bottom="30" left="50"/>
+            </padding>
+
+            <!-- Header Section -->
+            <Text text="Hello customer!"
+                  style="-fx-font-size: 22; -fx-font-weight: bold; -fx-fill: #333333;"/>
+
+            <Text text="Please select an option below to continue"
+                  style="-fx-font-size: 16; -fx-fill: #555555;"/>
+
+
+
+            <!-- Main Buttons -->
+            <Button fx:id="searchPetButton" onAction="#handleSearchPets"
+                    text="SEARCH PETS"
+                    style="-fx-background-color: #e0e0e0; -fx-border-color: #cccccc; -fx-border-radius: 3; -fx-background-radius: 3; -fx-font-size: 16px; -fx-font-weight: bold;"
+                    prefWidth="240" prefHeight="50"/>
+
+            <!-- Secondary Actions -->
+            <VBox spacing="15" alignment="CENTER">
+                <Button fx:id="petMatchingButton" onAction="#handlePetMatching"
+                        text="PET MATCHING"
+                        style="-fx-background-color: #e0e0e0; -fx-border-color: #cccccc; -fx-border-radius: 3; -fx-background-radius: 3; -fx-font-size: 14px;"
+                        prefWidth="200" prefHeight="40"/>
+
+                <Button fx:id="viewProfileButton" onAction="#handleViewProfile"
+                        text="VIEW MY PROFILE"
+                        style="-fx-background-color: #e0e0e0; -fx-border-color: #cccccc; -fx-border-radius: 3; -fx-background-radius: 3; -fx-font-size: 14px;"
+                        prefWidth="200" prefHeight="40"/>
+
+                <Button fx:id="checkStatusButton" onAction="#handleCheckStatus"
+                        text="CHECK ADOPTION STATUS"
+                        style="-fx-background-color: #e0e0e0; -fx-border-color: #cccccc; -fx-border-radius: 3; -fx-background-radius: 3; -fx-font-size: 14px;"
+                        prefWidth="200" prefHeight="40"/>
+
+                <Button fx:id="backButton" onAction="#handleGoBack"
+                        text="LOG OUT"
+                        style="-fx-background-color: #f5f5f5; -fx-border-color: #cccccc; -fx-border-radius: 3; -fx-background-radius: 3; -fx-font-size: 14px;"
+                        prefWidth="150" prefHeight="40"/>
+            </VBox>
+        </VBox>
+    </center>
+</BorderPane>

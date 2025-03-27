@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+
+<BorderPane xmlns="http://javafx.com/javafx/11.0.1"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controller.adopter.AdopterProfileController">
+    <center>
+        <ScrollPane fitToWidth="true" hbarPolicy="NEVER" vbarPolicy="AS_NEEDED">
+            <VBox spacing="15" style="-fx-background-color: #f5f5f5;">
+                <padding>
+                    <Insets top="20" right="20" bottom="20" left="20"/>
+                </padding>
+                <Label text="My Profile" style="-fx-font-size: 24; -fx-font-weight: bold;"/>
+                <Label text="View and update your information" style="-fx-font-size: 14;"/>
+
+                <Separator>
+                    <padding>
+                        <Insets top="5" bottom="5"/>
+                    </padding>
+                </Separator>
+
+                <!-- Personal Information Section -->
+                <Label text="Personal Information" style="-fx-font-size: 16; -fx-font-weight: bold;"/>
+
+                <GridPane hgap="10" vgap="15">
+                    <Label text="Name:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                    <TextField fx:id="nameField" promptText="Your full name" prefWidth="300"
+                               GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                    <Label text="Email:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                    <TextField fx:id="emailField" promptText="Your email address" prefWidth="300"
+                               GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                    <Label text="Phone:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                    <TextField fx:id="phoneField" promptText="Your phone number" prefWidth="300"
+                               GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+                    <Label text="Address:" GridPane.rowIndex="3" GridPane.columnIndex="0" GridPane.valignment="TOP">
+                        <padding>
+                            <Insets top="5" />
+                        </padding>
+                    </Label>
+                    <TextArea fx:id="addressField" promptText="Your full address" prefWidth="300" prefHeight="80"
+                              GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+                </GridPane>
+
+                <Separator>
+                    <padding>
+                        <Insets top="10" bottom="10"/>
+                    </padding>
+                </Separator>
+
+                <!-- Pet Preferences Section -->
+                <Label text="Pet Preferences" style="-fx-font-size: 16; -fx-font-weight: bold;"/>
+                <Label text="These preferences help us match you with suitable pets" style="-fx-font-size: 12;"/>
+
+                <GridPane hgap="10" vgap="15">
+                    <Label text="Preferred Species:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                    <ComboBox fx:id="speciesField" prefWidth="300" GridPane.rowIndex="0" GridPane.columnIndex="1">
+                        <items>
+                            <FXCollections fx:factory="observableArrayList">
+                                <String fx:value="Dog"/>
+                                <String fx:value="Cat"/>
+                                <String fx:value="Bird"/>
+                                <String fx:value="Small Animal"/>
+                                <String fx:value="Reptile"/>
+                                <String fx:value="Other"/>
+                            </FXCollections>
+                        </items>
+                    </ComboBox>
+
+                    <Label text="Preferred Breed:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                    <TextField fx:id="breedField" promptText="Enter preferred breed (if any)" prefWidth="300"
+                               GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                    <Label text="Age Range (years):" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                    <HBox spacing="10" GridPane.rowIndex="2" GridPane.columnIndex="1">
+                        <Spinner fx:id="minAgeSpinner" prefWidth="100" editable="true"/>
+                        <Label text="to"/>
+                        <Spinner fx:id="maxAgeSpinner" prefWidth="100" editable="true"/>
+                    </HBox>
+
+                    <Label text="Preferred Gender:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                    <ComboBox fx:id="genderField" prefWidth="300" GridPane.rowIndex="3" GridPane.columnIndex="1">
+                        <items>
+                            <FXCollections fx:factory="observableArrayList">
+                                <String fx:value="Male"/>
+                                <String fx:value="Female"/>
+                                <String fx:value="Any"/>
+                            </FXCollections>
+                        </items>
+                    </ComboBox>
+                </GridPane>
+
+                <Separator>
+                    <padding>
+                        <Insets top="15" bottom="15"/>
+                    </padding>
+                </Separator>
+
+                <!-- Action Buttons -->
+                <HBox spacing="15" alignment="CENTER">
+                    <Button fx:id="saveButton" text="SAVE CHANGES"
+                            style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-font-weight: bold;"
+                            prefWidth="150" prefHeight="40"/>
+
+                    <Button fx:id="backButton" text="GO BACK"
+                            style="-fx-background-color: #f5f5f5; -fx-border-color: #cccccc; -fx-border-radius: 3; -fx-background-radius: 3;"
+                            prefWidth="120" prefHeight="40"/>
+                </HBox>
+            </VBox>
+        </ScrollPane>
+    </center>
+</BorderPane>

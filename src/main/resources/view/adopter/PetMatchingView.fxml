@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx/11.0.1"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controller.adopter.PetMatchingController">
+    <top>
+        <ScrollPane fitToWidth="true" hbarPolicy="NEVER" vbarPolicy="AS_NEEDED">
+            <VBox spacing="15">
+                <padding>
+                    <Insets top="20" right="20" bottom="10" left="20"/>
+                </padding>
+                <Label text="Pet Matching System" style="-fx-font-size: 18; -fx-font-weight: bold;"/>
+                <Label text="Find your perfect pet match based on your preferences." wrapText="true"/>
+
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <Label text="Number of Matches:"/>
+                    <Spinner fx:id="matchCountSpinner" prefWidth="80" editable="true"/>
+                    <Button text="Find Matches" onAction="#handleFindMatches"
+                            style="-fx-background-color: #4CAF50; -fx-text-fill: white;"/>
+                    <Button fx:id="refreshButton" text="Refresh" onAction="#handleRefresh"/>
+                </HBox>
+            </VBox>
+        </ScrollPane>
+    </top>
+    <center>
+        <ScrollPane fitToWidth="true" fitToHeight="true">
+            <VBox spacing="15">
+                <HBox spacing="15">
+                    <!-- Adopter Details Section -->
+                    <VBox spacing="10" HBox.hgrow="ALWAYS">
+                        <Label text="Your Profile" style="-fx-font-size: 14; -fx-font-weight: bold;"/>
+
+                        <ScrollPane fitToWidth="true" hbarPolicy="NEVER" vbarPolicy="AS_NEEDED" VBox.vgrow="ALWAYS">
+                            <VBox spacing="10">
+                                <GridPane hgap="10" vgap="10">
+                                    <Label text="Name:" GridPane.rowIndex="0" GridPane.columnIndex="0"
+                                           style="-fx-font-weight: bold;"/>
+                                    <Label fx:id="adopterNameLabel" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                                    <Label text="Email:" GridPane.rowIndex="1" GridPane.columnIndex="0"
+                                           style="-fx-font-weight: bold;"/>
+                                    <Label fx:id="adopterEmailLabel" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                                    <Label text="Phone:" GridPane.rowIndex="2" GridPane.columnIndex="0"
+                                           style="-fx-font-weight: bold;"/>
+                                    <Label fx:id="adopterPhoneLabel" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+                                </GridPane>
+
+                                <Separator/>
+
+                                <Label text="Your Preferences" style="-fx-font-size: 14; -fx-font-weight: bold;"/>
+
+                                <GridPane hgap="10" vgap="10">
+                                    <Label text="Preferred Species:" GridPane.rowIndex="0" GridPane.columnIndex="0"
+                                           style="-fx-font-weight: bold;"/>
+                                    <Label fx:id="speciesPreferenceLabel" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                                    <Label text="Preferred Breed:" GridPane.rowIndex="1" GridPane.columnIndex="0"
+                                           style="-fx-font-weight: bold;"/>
+                                    <Label fx:id="breedPreferenceLabel" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                                    <Label text="Age Range:" GridPane.rowIndex="2" GridPane.columnIndex="0"
+                                           style="-fx-font-weight: bold;"/>
+                                    <Label fx:id="agePreferenceLabel" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+                                    <Label text="Preferred Gender:" GridPane.rowIndex="3" GridPane.columnIndex="0"
+                                           style="-fx-font-weight: bold;"/>
+                                    <Label fx:id="genderPreferenceLabel" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+                                </GridPane>
+
+                                <VBox spacing="5">
+                                    <Label text="Match Score Legend" style="-fx-font-weight: bold;"/>
+                                    <HBox spacing="5">
+                                        <Label text="80-100%" style="-fx-text-fill: #4CAF50; -fx-font-weight: bold;"/>
+                                        <Label text="Excellent match"/>
+                                    </HBox>
+                                    <HBox spacing="5">
+                                        <Label text="60-79%" style="-fx-text-fill: #2196F3; -fx-font-weight: bold;"/>
+                                        <Label text="Good match"/>
+                                    </HBox>
+                                    <HBox spacing="5">
+                                        <Label text="40-59%" style="-fx-text-fill: #FF9800; -fx-font-weight: bold;"/>
+                                        <Label text="Fair match"/>
+                                    </HBox>
+                                    <HBox spacing="5">
+                                        <Label text="Below 40%" style="-fx-text-fill: #F44336; -fx-font-weight: bold;"/>
+                                        <Label text="Poor match"/>
+                                    </HBox>
+                                </VBox>
+                            </VBox>
+                        </ScrollPane>
+                    </VBox>
+
+                    <!-- Matching Results Section -->
+                    <VBox spacing="10" HBox.hgrow="ALWAYS">
+                        <HBox alignment="CENTER_LEFT" spacing="10">
+                            <Label text="Your Matches" style="-fx-font-size: 14; -fx-font-weight: bold;"/>
+                            <Region HBox.hgrow="ALWAYS"/>
+                            <Label fx:id="matchCountLabel" text="0 matches found"/>
+                        </HBox>
+
+                        <ScrollPane fitToWidth="true" hbarPolicy="AS_NEEDED" vbarPolicy="AS_NEEDED" VBox.vgrow="ALWAYS">
+                            <TableView fx:id="matchesTable">
+                                <columns>
+                                    <TableColumn fx:id="matchNameColumn" text="Name" prefWidth="120"/>
+                                    <TableColumn fx:id="matchSpeciesColumn" text="Species" prefWidth="80"/>
+                                    <TableColumn fx:id="matchBreedColumn" text="Breed" prefWidth="120"/>
+                                    <TableColumn fx:id="matchAgeColumn" text="Age" prefWidth="50"/>
+                                    <TableColumn fx:id="matchGenderColumn" text="Gender" prefWidth="70"/>
+                                    <TableColumn fx:id="matchScoreColumn" text="Match Score" prefWidth="100"/>
+                                </columns>
+                                <placeholder>
+                                    <Label text="No matching pets found. Try clicking 'Find Matches'"/>
+                                </placeholder>
+                            </TableView>
+                        </ScrollPane>
+
+                        <HBox spacing="10" alignment="CENTER_RIGHT">
+                            <Button text="View Pet Details" onAction="#handleViewPetDetails"/>
+                            <Button text="Request Adoption"
+                                    onAction="#handleCreateAdoption"
+                                    style="-fx-background-color: #4CAF50; -fx-text-fill: white;"/>
+                            <Button fx:id="backButton" text="GO BACK"
+                                    style="-fx-background-color: #f5f5f5; -fx-border-color: #cccccc;
+                                           -fx-border-radius: 3; -fx-background-radius: 3; -fx-font-size: 14px;"
+                                    prefWidth="120" prefHeight="40"/>
+                        </HBox>
+                    </VBox>
+                </HBox>
+            </VBox>
+        </ScrollPane>
+    </center>
+</BorderPane>

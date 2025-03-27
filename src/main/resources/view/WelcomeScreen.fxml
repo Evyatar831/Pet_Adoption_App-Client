@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+
+<BorderPane xmlns="http://javafx.com/javafx/11.0.1"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controller.MainScreenController"
+            style="-fx-background-color: #f0f0f0;">
+    <center>
+        <VBox alignment="CENTER" spacing="20">
+            <padding>
+                <Insets top="30" right="50" bottom="30" left="50"/>
+            </padding>
+
+            <!-- Title Section -->
+            <Text text="Welcome to Ben &amp; Michelle's"
+                  style="-fx-font-size: 24; -fx-font-weight: bold; -fx-fill: #333333;"/>
+
+            <Text text="Pet Adoption Management Service!"
+                  style="-fx-font-size: 18; -fx-fill: #555555;"/>
+
+
+
+            <Text text="Please choose a user:"
+                  style="-fx-font-size: 16; -fx-font-weight: bold;-fx-fill:#555555;"/>
+
+            <!-- Button Section -->
+            <HBox alignment="CENTER" spacing="40">
+                <!-- Staff Button -->
+                <Button fx:id="staffButton" onAction="#handleStaffLogin"
+                        text="STAFF"
+                        style="-fx-background-color: #e0e0e0; -fx-border-color: #cccccc; -fx-border-radius: 5; -fx-background-radius: 5; -fx-font-size: 14px; -fx-font-weight: bold;"
+                        prefWidth="150" prefHeight="50"/>
+
+                <!-- Adopter Button -->
+                <Button fx:id="adopterButton" onAction="#handleAdopterLogin"
+                        text="ADOPTER"
+                        style="-fx-background-color: #e0e0e0; -fx-border-color: #cccccc; -fx-border-radius: 5; -fx-background-radius: 5; -fx-font-size: 14px; -fx-font-weight: bold;"
+                        prefWidth="150" prefHeight="50"/>
+            </HBox>
+        </VBox>
+    </center>
+</BorderPane>
