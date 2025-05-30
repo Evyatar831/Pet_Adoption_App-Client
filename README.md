@@ -4,7 +4,7 @@
 
 This is the client component of the Pet Adoption Management System, a Java-based application designed to facilitate pet adoption processes. The client application provides an intuitive graphical user interface built with JavaFX that allows both shelter staff and potential adopters to interact with the system.
 
-Pet Adoption Management System - https://github.com/Evyatar831/Pet_Adoption_App-Server
+#Pet Adoption Management System -Server- https://github.com/Evyatar831/Pet_Adoption_App-Server
 ![client 1](https://github.com/user-attachments/assets/23270b3d-adf9-44ce-8c58-8d332ad51388)
 ![client 2](https://github.com/user-attachments/assets/c051d03e-e079-4078-8935-86ce0c79c62e)
 ![client 3](https://github.com/user-attachments/assets/a42d0789-19d9-4003-9192-194a80fca4a2)
